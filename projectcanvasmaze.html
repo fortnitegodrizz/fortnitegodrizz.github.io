@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<style> 
+			canvas {
+					position: absolute;
+						top: 100;
+						left: 100;
+					}
+	</style>
+</head>
+
+<body>
+<h1> HTML5 Canvas </h1>
+<h2> MAZE PROJECT </h2>
+<canvas id='myCanvas' width='600' height='600' style='border:1px solid black;' >
+</canvas>
+
+<script>
+const canvas = document.getElementById('myCanvas');
+const ctx = canvas.getContext('2d');
+//1st path
+ctx.beginPath();
+ctx.moveTo(300,0);
+ctx.lineTo(300,100);
+ctx.lineTo(100,100);
+ctx.lineTo(100,200);
+ctx.strokeStyle= 'red';
+ctx.stroke();
+//2nd path
+ctx.beginPath();
+ctx.moveTo(0,400);
+ctx.lineTo(100,400);
+ctx.lineTo(100,500);
+ctx.strokeStyle= 'red';
+ctx.stroke();
+//3rd path
+ctx.beginPath();
+ctx.moveTo(600,200);
+ctx.lineTo(500,200);
+ctx.strokeStyle= 'red';
+ctx.stroke();
+//4th path
+ctx.beginPath();
+ctx.moveTo(600,400);
+ctx.lineTo(500,400);
+ctx.strokeStyle= 'red';
+ctx.stroke();
+//5th path
+ctx.beginPath();
+ctx.moveTo(300,600);
+ctx.lineTo(300,400);
+ctx.lineTo(200,400);
+ctx.lineTo(200,500);
+ctx.lineTo(200,300);
+ctx.lineTo(100,300);
+ctx.lineTo(200,300);
+ctx.lineTo(200,200);
+ctx.lineTo(400,200);
+ctx.lineTo(400,100);
+ctx.lineTo(500,100);
+ctx.lineTo(400,100);
+ctx.lineTo(400,300);
+ctx.lineTo(500,300);
+ctx.lineTo(400,300);
+ctx.lineTo(400,500);
+ctx.lineTo(500,500);
+ctx.strokeStyle= 'red';
+ctx.stroke();
+//Opening
+ctx.beginPath();
+ctx.moveTo(200,0);
+ctx.lineTo(300,0);
+ctx.strokeStyle= 'blue';
+ctx.stroke();
+</script>
+
+<svg width='600' height='600'>
+	<g>
+		<circle cx='50' cy='50' r='25' stroke='black' fill='blue'> </circle>
+		<animateMotion path='M 0 0  V 200 H 100 V 100 H 300 V 00 H 500 V 100 H 400 V 200 H 500 V 300 H 400 V 400 H 500 V 500 H 300 V 300 Z' dur='3s'/>
+	</g>
+</svg>
+
+
+</body>
+</html>
