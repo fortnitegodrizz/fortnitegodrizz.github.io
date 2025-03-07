@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>String Search</title>
+</head>
+<body>
+	<h2> We are using Search-function to take a sentence and then find the index number of the word in the sentence. </h2><hr>
+	
+	<label for='sentence'> Enter a sentence: </label>
+	<input type='text' id='sentence'> <br> <br>
+
+	<label for='word'> Enter the word to search for: </label>
+	<input type='text' id='word'> <br> <br>
+
+	<button onclick='searchWord()'> Find the index number </button>
+
+	<p id="result"> Here you go... </p>
+	
+	<script>
+		function searchWord() {
+            const sentence = document.getElementById("sentence").value;
+            const word = document.getElementById("word").value;
+		
+		// Improved Search Logic -- if the word is not found
+		
+		const index = sentence.search(new RegExp("\\b" + word + "\\b", "i"));
+		
+		if (index !== -1) {
+		document.getElementById("result").innerHTML = "The index of " + word + " is: " + index; }
+		else {
+		document.getElementById("result").innerHTML = word + " is not FOUND"; }
+	}
+	</script>	
+</body>
+</html>

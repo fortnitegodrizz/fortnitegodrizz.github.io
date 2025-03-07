@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+<title>MapMarkers</title>
+</head>
+
+<style>
+#map {
+height : 100%; }
+html,body {
+height: 100%;
+margin: 0;
+padding: 0: }
+</style>
+
+<body>
+<div id="map"> </div>
+<h1> My first Marker on the map API</h1>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default">
+</script>
+
+<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly"
+      defer>
+</script>
+
+<script>
+function initMap() {
+const myLatLng = { lat: 41.9877905, lng: -87.7010749 };
+const map = new google.maps.Map(document.getElementById("map"),
+{ zoom:12, center: myLatLng, });
+
+new google.maps.Marker({
+position: myLatLng,
+map,
+title: "mather high school",
+});
+}
+window.initMap = initMap;
+
+</script>
+
+
+
+
+<script>
+function initMap() {
+const myLatLng = { lat: 41.808509, lng: --87.674686 };
+const map = new google.maps.Map(document.getElementById("map"),
+{ zoom:12, center: myLatLng, });
+
+new google.maps.Marker({
+position: myLatLng,
+map,
+title: "burger king ",
+});
+}
+window.initMap = initMap;
+
+</script>
+
+</body>
+</html>

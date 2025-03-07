@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Google Books API </title>
+</head>
+<body>
+	<h1> This page will allow us to search for different books using Google Books API </h1>
+	<h2> Enter your title: </h2>
+	<input type='test' id='searchInput' placeholder='Title'>
+	<button id='searchButton'> Search </button>
+	<div id='results'> </div>
+	
+	<script>
+		document.getElementById('searchButton;). addEventListerner('click', function()(
+		const searchTerm = document.getElementById('searchInput').value;
+		
+		if (searchTerm) {
+			searchBooks(searchTerm);
+			}
+		});
+		
+		function searchBooks(searchTerm) {
+		const apiUrl= 'https://www.googleapis.com/books/v1/volumes?q=${encodeURIComponent(searchTerm)}';
+		
+		fetch(apiUrl)
+			.then (response => {
+				if (!response.ok) {
+					throw new Error ('HTTP error! status');
+					}
+				return response.json();
+				})
+				
+			.then (data => {
+				displayResults(data.items);
+			})
+			.catch(error => {
+				document.getElementById('results').innerHTML = '<p> Error </p>'
+			});
+			}
+			
+		function displayResults(items){
+			const resultsDiv = document.getElementById('results');
+			resultsDiv.innerHTML = '';
+			
+			if(!items || item.length === 0) {
+				resultsDiv.innerHTML = '<p> No books found </p>';
+				return;
+			}
+			
+			items.forEach (item => {
+				const book = item.volumeInfo;
+				const title = book.title || 'Title not available';
+				const author = book.authors ? book.authors.join(','): 'Authors not available';
+				
+				const description = book.description ? book.description.substring(0,200) + '...': 'Description not available';
+				
+				const image = book.imageLinks && book.imageLinks.thumbnail ? book.imageLinks.thumbnail : 'placeholder_image.png';
+				// Replace with a placeholder image url.
+				
+				const bookLink = book.infoLink || "#";
+				const bookDiv = document.createElement('div');
+					bookDiv.innerHTML = '
+					<h3> <a href="$(bookLink)" target="_blank"> ${title} </a> </h3>
+					<p> Authors: ${authors}</p>
+					<img src="${image}" alt="${title}" style= "max-width: 100px;"> 
+					<p> ${description}</p>
+					<hr>
+					';
+					
+					resultsDiv.appendChild(bookDiv);
+					}):
+					}
+					
+		</script>
+	</body>
+	</html>

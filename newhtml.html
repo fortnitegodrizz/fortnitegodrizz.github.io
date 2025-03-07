@@ -1,0 +1,76 @@
+<!Doctype HTML>
+<html>
+<head>
+    <title> JS Pop Up </title>
+</head>
+
+<style>
+body {
+  font-family: sans-serif;
+  text-align: center; /* Center the content */
+  background-color: #f0f0f0; /* Light background color */
+}
+p {
+padding: 40px;
+}
+
+
+h1 {
+  color: #333; /* Darker heading color */
+}
+
+button {
+  background-color: #4CAF50; /* Green button */
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+    display: inline-block;
+  font-size: 16px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+
+/* Fun animation on the output text */
+#demo.animated {
+  animation: colorChange 5s linear infinite; /* Apply the animation */
+  font-size: 46px;
+  
+}
+
+@keyframes colorChange {
+  0% { color: #555; }
+  25% { color: #007bff; } /* Blue */
+  50% { color: #dc3545; } /* Red */
+  75% { color: #ffc107; } /* Yellow */
+  100% { color: #555; } /* Back to original color */
+}
+.name-display { /* Style for the name display areas */
+    font-weight: bold;
+    color: blue; /* Or any color you like */}
+</style>
+
+<body>
+    <h1> The Indow Object </h1>
+    <h2> The prompt() method </h2>
+    
+    <p> Click the butoon to demonstrate the prompt box </p>
+    <button onclick = 'myPrompt()'> TRY IT
+    </button>
+    
+    <p id = 'demo'> Here you go... </p>
+    
+    <script> 
+        function myPrompt() {
+            var person = prompt('Please enter your name', 'Full Name');
+            document.getElementById('demo').innerHTML = "Hello " + person + "! How are you today?";
+        }
+    </script>
+</body>
+</html>

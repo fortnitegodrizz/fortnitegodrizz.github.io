@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2> The POW method </h2>
+    
+    <p> Click the button to demonstrate </p>
+    <button onclick = 'myFunction()'> TRY IT </button>
+    
+    <p id = 'demo'> Here... </p>
+    
+    <script> 
+        function myFunction() {
+            var num = prompt('Please enter a number');
+            var exp = prompt('Please enter a exponent');
+				document.getElementById('demo').innerHTML = 'Value of ' + num + ' to the power of ' + exp + ' is ' + Math.pow(num,exp);
+        }
+    </script>
+	
+	<hr>
+
+    <h2> The Percent method </h2>
+    
+    <p> Click the button to demonstrate </p>
+    <button onclick = 'myPercent()'> TRY IT </button>
+    
+    <p id = 'demo1'> Here... </p>
+    
+    <script> 
+        function myPercent() {
+            var num2 = prompt('Please enter a number');
+            var per = prompt('Please enter a percent');
+				document.getElementById('demo1').innerHTML = per + ' percent of ' + num2 + ' is ' + num2*(per/100);
+        }
+    </script>
+
+
+
+
+</body>
+</html>

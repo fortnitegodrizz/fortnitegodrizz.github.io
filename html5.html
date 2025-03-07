@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<script src= "https://cdn.plot.ly/plotly-latest.min.js"></script>
+<body>
+<div id='myPlot' style='width:100%; max-width: 1000px'> </div>
+<script>
+	const xArray = [10,16,18,22];
+	const yArray = [ 'John' , 'Mary' , 'LOLL' , 'Yo' ];
+
+	const data = [
+	{
+	x: xArray,
+	y: yArray,
+	type: 'bar',
+	orientation: 'h',
+	marker: {color:'red'}
+	}
+];
+
+const layout = {title: 'Siblings- Years'};
+
+Plotly.newPlot ('myPlot', data, layout);
+</script>
+</body>
+</html>

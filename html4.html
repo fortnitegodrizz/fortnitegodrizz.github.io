@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Number Sorter</title>
+<style>
+<body>
+font-family: sans-serif;
+}
+#result {
+margin-top: 10px;
+font-weight: bold;
+}
+</style>
+</head>
+
+</style>
+<h1> Number Sorter </h1> <hr>
+<p> Enter your numbers: </p>
+
+<input type='number' id='num1'> <br><br>
+<input type='number' id='num2'> <br> <br>
+<input type='number' id='num3'> <br> <br>
+<input type='number' id='num4'> <br><br>
+<input type='number' id='num5'> <br>
+<hr>
+<button onclick='sortNumber()'> Sort Numbers</button>
+
+<p id='result'> Your sorted out the numbers... </p>
+
+<script>
+function sortNumbers()  {
+const num1= parseFloat(document.getElementById("num1").value);
+const num2= parseFloat(document.getElementById("num2").value);
+const num3= parseFloat(document.getElementById("num3").value);
+const num4= parseFloat(document.getElementById("num4").value);
+const num5= parseFloat(document.getElementById("num5").value);
+
+//check if all inputs are valid numbers
+if (isNaN(num1) || isNaN(num2) || isNaN(num3) || isNaN(num4) || isNaN(num5)) {
+
+document.getElementById("result").textContent= " Please enter valid number.";
+return;
+}
+
+//Store the numbers in an array
+const numbers = [num1, num2, num3, num4, num5];
+
+//Sorting the array in acending order using Sort()
+numbers.sort((a ,b) => a - b);
+
+document.getElementById("result").textContent = "Sorted Numbers: " +
+numbers.join(",");
+
+}
+</script>
+</body>

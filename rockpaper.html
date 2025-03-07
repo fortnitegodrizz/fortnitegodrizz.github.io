@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <style>
+        .button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Rock Paper Scissors</h1>
+    <div>
+        <button class="button" onclick="playGame('rock')">Rock</button>
+        <button class="button" onclick="playGame('paper')">Paper</button>
+        <button class="button" onclick="playGame('scissors')">Scissors</button>
+    </div>
+    <div id="result"></div>
+    <script>
+        function playGame(userInput) {
+            const choices = ['rock', 'paper', 'scissors'];
+            const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+            const randomNumber = Math.floor(Math.random() * 6); // Generate a random number between 0 and 5
+            let result = '';
+
+            switch (randomNumber) {
+                case 0:
+                    result = `Rock vs. Rock - It's a tie!`;
+                    break;
+                case 1:
+                    result = `Rock vs. Paper - Computer Wins!`;
+                    break;
+                case 2:
+                    result = `Rock vs. Scissors - You win!`;
+                    break;
+                case 3:
+                    result = `Paper vs. Paper - It's a tie!`;
+                    break;
+                case 4:
+                    result = `Paper vs. Scissors - Computer wins!`;
+                    break;
+                case 5:
+                    result = `Scissors vs. Scissors - It's a tie!`;
+                    break;
+                default:
+                    result = 'Unexpected outcome!';
+            }
+
+            document.getElementById('result').innerHTML = `You chose ${userInput}. Computer chose ${computerChoice}. ${result}`;
+        }
+    </script>
+</body>
+</html>
